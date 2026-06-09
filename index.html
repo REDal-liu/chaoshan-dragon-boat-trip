@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏮 端午潮汕之旅 · 2026.6.19-21</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  :root {
+    --red: #C41E3A;
+    --gold: #D4A843;
+    --dark: #1a1a2e;
+    --card: #fff;
+    --bg: #fef9f3;
+    --text: #333;
+    --text-light: #666;
+    --border: #e8ddd0;
+    --green: #2d6a4f;
+    --blue: #1d3557;
+    --tag-bg: #fff3e0;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(212,168,67,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(196,30,58,0.1) 0%, transparent 50%);
+    animation: heroGlow 8s ease-in-out infinite alternate;
+  }
+  @keyframes heroGlow {
+    0% { transform: translate(0,0) scale(1); }
+    100% { transform: translate(2%, -2%) scale(1.05); }
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-dragon {
+    font-size: 72px;
+    margin-bottom: 12px;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+    background: linear-gradient(180deg, #fff 0%, #D4A843 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+  }
+  .hero .badge-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero .badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Container ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── Overview Cards ── */
+  .overview {
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .ov-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .ov-card:hover { transform: translateY(-4px); }
+  .ov-card .icon { font-size: 36px; margin-bottom: 8px; }
+  .ov-card .label { font-size: 13px; color: var(--text-light); margin-bottom: 4px; }
+  .ov-card .value { font-size: 20px; font-weight: 700; color: var(--dark); }
+
+  /* ── Section headers ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 48px 0 24px;
+  }
+  .section-header .num {
+    width: 40px; height: 40px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  /* ── Timeline Day ── */
+  .day-card {
+    background: var(--card);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+  }
+  .day-card-header {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-card-header .day-num {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 22px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .day-1 .day-num { background: linear-gradient(135deg, #f093fb, #f5576c); }
+  .day-2 .day-num { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+  .day-3 .day-num { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+
+  .day-card-header .day-info h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .day-card-header .day-info .day-date {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  .day-card-header .day-tag {
+    margin-left: auto;
+    background: var(--tag-bg);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e67e22;
+    white-space: nowrap;
+  }
+
+  /* Timeline items */
+  .timeline {
+    padding: 20px 24px;
+    position: relative;
+  }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item:last-child::before { display: none; }
+
+  .tl-time {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: #f5f0e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-content { flex: 1; padding-bottom: 8px; }
+  .tl-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tl-content p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .tl-tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .tl-tag.food { background: #fff3e0; color: #e65100; }
+  .tl-tag.drive { background: #e3f2fd; color: #1565c0; }
+  .tl-tag.view { background: #fce4ec; color: #c62828; }
+
+  /* ── Route Map (SVG) ── */
+  .route-section {
+    margin: 48px 0;
+  }
+  .route-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+  }
+  .route-stops {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .route-stop {
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+  }
+  .route-stop .dot {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 8px;
+    background: #f5f0e8;
+    border: 3px solid var(--border);
+  }
+  .route-stop.active .dot {
+    background: var(--red);
+    border-color: var(--red);
+  }
+  .route-stop .city {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .route-stop .desc {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+  .route-arrow {
+    font-size: 24px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── Food Grid ── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .food-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .food-card .food-emoji { font-size: 36px; margin-bottom: 8px; }
+  .food-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .food-card .food-desc { font-size: 13px; color: var(--text-light); }
+  .food-card .food-shop { font-size: 12px; color: var(--red); font-weight: 500; margin-top: 6px; }
+
+  /* ── Budget ── */
+  .budget-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+  .budget-table th, .budget-table td {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 14px;
+  }
+  .budget-table th {
+    background: #1a1a2e;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .budget-table td { border-bottom: 1px solid var(--border); }
+  .budget-table tr:last-child td { border-bottom: none; }
+  .budget-table .total-row td {
+    background: #fef9f3;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--red);
+  }
+
+  /* ── Tips ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+  .tip-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .tip-card p { font-size: 13px; color: var(--text-light); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-light);
+    font-size: 13px;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; }
+    .hero { padding: 40px 24px; }
+    .day-card, .food-card, .tip-card { break-inside: avoid; box-shadow: none; }
+    .container { max-width: 100%; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 16px 36px; }
+    .hero h1 { font-size: 28px; letter-spacing: 2px; }
+    .hero .badge-row { gap: 8px; }
+    .hero .badge { padding: 6px 14px; font-size: 12px; }
+    .overview { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .ov-card { padding: 16px 12px; }
+    .route-stops { flex-direction: column; }
+    .route-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-dragon">🐉</div>
+    <h1>端午潮汕之旅</h1>
+    <div class="subtitle">深圳出发 · 自驾 · 4人行 · 三天两夜</div>
+    <div class="badge-row">
+      <span class="badge">📅 6.19 - 6.21</span>
+      <span class="badge">👥 4人出行</span>
+      <span class="badge">🚗 自驾游</span>
+      <span class="badge">🎋 端午节</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- ════════════ OVERVIEW ════════════ -->
+<div class="overview">
+  <div class="ov-card">
+    <div class="icon">📍</div>
+    <div class="label">出发地</div>
+    <div class="value">深圳</div>
+  </div>
+  <div class="ov-card">
+    <div class="icon">🏁</div>
+    <div class="label">总里程</div>
+    <div class="value">~730km</div>
+  </div>
+  <div class="ov-card">
+    <div class="icon">⏱️</div>
+    <div class="label">单程驾驶</div>
+    <div class="value">4.5 小时</div>
+  </div>
+  <div class="ov-card">
+    <div class="icon">💰</div>
+    <div class="label">人均预算</div>
+    <div class="value">¥1,200</div>
+  </div>
+  <div class="ov-card">
+    <div class="icon">🎯</div>
+    <div class="label">途经</div>
+    <div class="value">汕头 · 南澳 · 潮州</div>
+  </div>
+</div>
+
+<!-- ════════════ ROUTE ════════════ -->
+<div class="route-section">
+  <div class="section-header">
+    <div class="num">🗺️</div>
+    <h2>自驾路线总览</h2>
+  </div>
+  <div class="route-card">
+    <svg viewBox="0 0 800 180" style="width:100%; max-width:800px; margin:0 auto; display:block;">
+      <!-- Background -->
+      <rect width="800" height="180" rx="16" fill="#faf6ef" />
+
+      <!-- Route line -->
+      <path d="M60,130 C200,130 280,90 350,90 C420,90 480,130 600,130 C680,130 720,90 760,90"
+            stroke="#D4A843" stroke-width="3" fill="none" stroke-dasharray="8,4" />
+      <path d="M60,130 C200,130 280,90 350,90 C420,90 480,130 600,130 C680,130 720,90 760,90"
+            stroke="#C41E3A" stroke-width="6" fill="none" stroke-dasharray="2000" stroke-dashoffset="0" opacity="0.3"/>
+
+      <!-- Shenzhen -->
+      <circle cx="60" cy="130" r="14" fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+      <text x="60" y="115" text-anchor="middle" font-size="24">🏙️</text>
+      <text x="60" y="165" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">深圳</text>
+      <text x="60" y="178" text-anchor="middle" font-size="10" fill="#888">6/18 周四 23:00 出发</text>
+
+      <!-- Shantou -->
+      <circle cx="260" cy="90" r="14" fill="#C41E3A" stroke="#fff" stroke-width="3"/>
+      <text x="260" y="75" text-anchor="middle" font-size="24">🍲</text>
+      <text x="260" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#C41E3A">汕头</text>
+      <text x="260" y="133" text-anchor="middle" font-size="10" fill="#888">6/19 凌晨抵达</text>
+
+      <!-- Nan'ao -->
+      <circle cx="420" cy="130" r="14" fill="#2d6a4f" stroke="#fff" stroke-width="3"/>
+      <text x="420" y="115" text-anchor="middle" font-size="24">🏝️</text>
+      <text x="420" y="165" text-anchor="middle" font-size="13" font-weight="700" fill="#2d6a4f">南澳岛</text>
+      <text x="420" y="178" text-anchor="middle" font-size="10" fill="#888">6/19 全天环岛</text>
+
+      <!-- Chaozhou -->
+      <circle cx="640" cy="90" r="14" fill="#C41E3A" stroke="#fff" stroke-width="3"/>
+      <text x="640" y="75" text-anchor="middle" font-size="24">🏯</text>
+      <text x="640" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#C41E3A">潮州</text>
+      <text x="640" y="133" text-anchor="middle" font-size="10" fill="#888">6/20 晚 - 6/21</text>
+
+      <!-- Return -->
+      <circle cx="760" cy="90" r="14" fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+      <text x="760" y="75" text-anchor="middle" font-size="24">🏠</text>
+      <text x="760" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">返深</text>
+      <text x="760" y="133" text-anchor="middle" font-size="10" fill="#888">6/21 下午/晚上</text>
+    </svg>
+
+    <div class="route-stops">
+      <div class="route-stop active">
+        <div class="dot">🌃</div>
+        <div class="city">深圳出发</div>
+        <div class="desc">6/18 周四 23:00</div>
+      </div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop">
+        <div class="dot">🏙️</div>
+        <div class="city">汕头</div>
+        <div class="desc">4.5h 车程 · 凌晨抵</div>
+      </div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop">
+        <div class="dot">🏝️</div>
+        <div class="city">南澳岛</div>
+        <div class="desc">汕头出发 40min</div>
+      </div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop">
+        <div class="dot">🏯</div>
+        <div class="city">潮州古城</div>
+        <div class="desc">汕头出发 40min</div>
+      </div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop active">
+        <div class="dot">🏠</div>
+        <div class="city">返回深圳</div>
+        <div class="desc">6/21 下午出发</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 0: THURSDAY ════════════ -->
+<div class="section-header">
+  <div class="num">🚗</div>
+  <h2>出发夜 · 深圳 → 汕头</h2>
+</div>
+
+<div class="day-card" style="border-left: 4px solid #6c5ce7;">
+  <div class="day-card-header">
+    <div class="day-num" style="background:linear-gradient(135deg, #6c5ce7, #a29bfe);">0</div>
+    <div class="day-info">
+      <h3>周四夜出发</h3>
+      <div class="day-date">2026年6月18日 · 端午节前夜</div>
+    </div>
+    <div class="day-tag" style="background:#ede7f6; color:#6c5ce7;">🌙 夜间驾驶</div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">22:30</div>
+      <div class="tl-content">
+        <h4>📦 集合装车 <span class="tl-tag drive">出发准备</span></h4>
+        <p>检查行李：身份证、驾驶证、防晒霜、雨具、充电宝、晕车药、肠胃药。油箱加满！</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">23:00</div>
+      <div class="tl-content">
+        <h4>🚗 深圳出发 <span class="tl-tag drive">自驾</span></h4>
+        <p>走沈海高速 G15 → 潮惠高速 S17，全程约 353km。夜间车少，但注意安全驾驶，建议每 2 小时休息一次。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~03:30</div>
+      <div class="tl-content">
+        <h4>🛏️ 抵达汕头 <span class="tl-tag">入住</span></h4>
+        <p>抵达汕头市区，入住提前预定的酒店/民宿（推荐万象城或小公园附近），抓紧补觉为明天养精蓄锐。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 1: FRIDAY ════════════ -->
+<div class="section-header">
+  <div class="num">1</div>
+  <h2>南澳岛环岛 · 海岛端午</h2>
+</div>
+
+<div class="day-card day-1" style="border-left: 4px solid #f5576c;">
+  <div class="day-card-header">
+    <div class="day-num">1</div>
+    <div class="day-info">
+      <h3>南澳岛一日游</h3>
+      <div class="day-date">2026年6月19日 周五 · 端午节 🎋</div>
+    </div>
+    <div class="day-tag">🏝️ 海岛 · 环岛自驾</div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">08:30</div>
+      <div class="tl-content">
+        <h4>🥟 汕头早茶 <span class="tl-tag food">美食</span></h4>
+        <p>睡到自然醒，在汕头市区享受一顿地道潮汕肠粉 + 粿条汤，推荐 <strong>小吴肠粉</strong> 或 <strong>广场老牌豆花</strong>。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">09:30</div>
+      <div class="tl-content">
+        <h4>🌉 穿越南澳大桥 <span class="tl-tag drive">自驾</span></h4>
+        <p>驱车 40 分钟，驶过全长 11km 的南澳大桥，海天一色，壮观震撼。过桥费 ¥96/车。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <h4>🔴 长山尾灯塔 <span class="tl-tag view">打卡</span></h4>
+        <p>上岛第一站！红色灯塔 + 南澳大桥同框，绝佳拍照点。端午限定的碧海蓝天！</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">11:00</div>
+      <div class="tl-content">
+        <h4>🏖️ 青澳湾 <span class="tl-tag view">玩水</span></h4>
+        <p>"东方夏威夷"，沙滩细腻，可以下海踏浪。打卡 <strong>北回归线标志塔"自然之门"</strong>，夏至前后"立杆不见影"。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <h4>🦐 海鲜大餐 <span class="tl-tag food">美食</span></h4>
+        <p>后宅镇或青澳湾渔排大排档，现捞海鲜：膏蟹、生蚝、海胆、紫菜炒饭、海石花甜品。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <h4>🗼 三囱崖灯塔 + 风车山 <span class="tl-tag view">打卡</span></h4>
+        <p>红白条纹双子灯塔矗立悬崖边，远处 42 座风车徐徐转动。无人机出片圣地！</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">16:00</div>
+      <div class="tl-content">
+        <h4>🌈 走马埔村 · 彩虹海 <span class="tl-tag view">打卡</span></h4>
+        <p>电影《四海》取景地，彩色浮球养殖区铺满海面，夕阳下美如画卷。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">18:00</div>
+      <div class="tl-content">
+        <h4>🌅 离岛 · 返回汕头 <span class="tl-tag drive">返程</span></h4>
+        <p>趁天黑前离开南澳岛返回汕头市区，避开夜间山路。入住汕头酒店。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">20:00</div>
+      <div class="tl-content">
+        <h4>🥘 龙眼南路美食街 <span class="tl-tag food">夜宵</span></h4>
+        <p>汕头夜生活！龙眼南路从头吃到尾：生腌、夜粥、蚝烙、牛肉丸…感受潮汕深夜食堂。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 2: SATURDAY ════════════ -->
+<div class="section-header">
+  <div class="num">2</div>
+  <h2>汕头老城 · 骑楼烟火</h2>
+</div>
+
+<div class="day-card day-2" style="border-left: 4px solid #4facfe;">
+  <div class="day-card-header">
+    <div class="day-num">2</div>
+    <div class="day-info">
+      <h3>汕头深度游</h3>
+      <div class="day-date">2026年6月20日 周六</div>
+    </div>
+    <div class="day-tag" style="background:#e3f2fd;color:#1565c0;">🏛️ 老城 · 美食</div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">09:00</div>
+      <div class="tl-content">
+        <h4>🥢 潮汕肠粉早餐 <span class="tl-tag food">美食</span></h4>
+        <p>皮薄馅多酱汁浓的潮汕肠粉，配一杯单丛茶，打开元气满满的一天。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <h4>🏛️ 小公园骑楼群 <span class="tl-tag view">景点</span></h4>
+        <p>百年商埠核心区，南洋风情骑楼建筑群。打卡 <strong>汕头旅社网红墙</strong>、<strong>老妈宫</strong>、<strong>邮政总局大楼</strong>、<strong>开埠文化陈列馆</strong>。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">12:00</div>
+      <div class="tl-content">
+        <h4>🥩 牛肉火锅 <span class="tl-tag food">美食</span></h4>
+        <p>来汕头不吃牛肉火锅等于白来！推荐 <strong>杏花吴记</strong> 或 <strong>八合里海记总店</strong>。必点：吊龙、雪花、匙柄、胸口朥、手打牛肉丸。"三起三落"七八秒即食，配沙茶酱绝了！</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <h4>🌊 西堤公园 + 广场轮渡 <span class="tl-tag view">休闲</span></h4>
+        <p>西堤公园看海，花 ¥1 坐广场轮渡横渡汕头内海湾，感受海滨城市的慢生活。也可以去 <strong>潮汕历史文化博览中心</strong>（周六开放）。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">16:30</div>
+      <div class="tl-content">
+        <h4>🚗 驱车前往潮州 <span class="tl-tag drive">自驾</span></h4>
+        <p>汕头 → 潮州仅 40 分钟车程。入住牌坊街附近民宿，然后开始古城夜游。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">18:00</div>
+      <div class="tl-content">
+        <h4>🏮 牌坊街夜逛 <span class="tl-tag view">景点</span></h4>
+        <p>22 座明清石牌坊林立，骑楼老街灯火辉煌。西马路小吃街一路逛吃：腐乳鸡翅、咸水粿、牛杂粿条。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">20:00</div>
+      <div class="tl-content">
+        <h4>✨ 广济桥灯光秀 <span class="tl-tag view">必看</span></h4>
+        <p>⚠️ <strong>提前 30 分钟到韩江对岸占位！</strong> 20:00 场次最推荐，光影+古桥+韩江，潮州最震撼的夜晚。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">21:00</div>
+      <div class="tl-content">
+        <h4>🍵 载阳茶馆听潮剧 <span class="tl-tag view">文化</span></h4>
+        <p>泡一壶凤凰单丛，听一曲潮州戏曲，感受千年古城的文化底蕴。或者去路边喝一碗 <strong>鸭母捻甜汤</strong>。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 3: SUNDAY ════════════ -->
+<div class="section-header">
+  <div class="num">3</div>
+  <h2>潮州古城 · 千年风韵</h2>
+</div>
+
+<div class="day-card day-3" style="border-left: 4px solid #43e97b;">
+  <div class="day-card-header">
+    <div class="day-num">3</div>
+    <div class="day-info">
+      <h3>潮州深度 + 返程</h3>
+      <div class="day-date">2026年6月21日 周日 · 返程日</div>
+    </div>
+    <div class="day-tag" style="background:#e8f5e9;color:#2e7d32;">🏯 古城 · 返程</div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">08:00</div>
+      <div class="tl-content">
+        <h4>🍜 潮州早味 <span class="tl-tag food">美食</span></h4>
+        <p>一碗热腾腾的粿条汤或牛杂汤，配上潮州腐乳饼或春饼，古城早餐暖胃又暖心。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">09:00</div>
+      <div class="tl-content">
+        <h4>🏛️ 韩文公祠 <span class="tl-tag view">景点</span></h4>
+        <p>纪念唐代文豪韩愈，登高俯瞰韩江与广济桥全景。免费参观（周日开放），了解"潮州江山尽姓韩"的故事。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">10:30</div>
+      <div class="tl-content">
+        <h4>🌉 广济桥（湘子桥）<span class="tl-tag view">必看</span></h4>
+        <p>中国四大古桥之一！"十八梭船廿四洲"，世界上最早的启闭式桥梁。门票 ¥20/人，一定要走到浮桥部分感受"过桥"体验。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">12:00</div>
+      <div class="tl-content">
+        <h4>🛕 开元寺 <span class="tl-tag view">景点</span></h4>
+        <p>唐代千年古刹，"粤东第一古刹"。端午期间可能有祈福活动，免费参观。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <h4>🥘 最后一顿潮汕大餐 <span class="tl-tag food">美食</span></h4>
+        <p><strong>官塘兄弟牛肉火锅</strong> 或牌坊街老店。卤水鹅肉、反沙芋头、蚝烙…把想吃的全安排上！顺便买些 <strong>潮州三宝</strong>（老香黄、老药桔、黄皮豉）当伴手礼。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <h4>🚶 牌坊街 + 甲第巷 <span class="tl-tag view">闲逛</span></h4>
+        <p>漫步古城小巷，探访许驸马府、己略黄公祠。甘草水果、芝麻茶、春卷边逛边吃。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">16:00</div>
+      <div class="tl-content">
+        <h4>🚗 出发返深 <span class="tl-tag drive">返程</span></h4>
+        <p>从潮州出发走汕昆高速 → 潮惠高速 → 沈海高速，约 4.5 小时回到深圳。预计 20:30 左右到家。注意端午返程高峰，可适当提前或延后出发。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ FOOD ════════════ -->
+<div class="section-header">
+  <div class="num">🍜</div>
+  <h2>必吃清单 · 潮汕美食地图</h2>
+</div>
+
+<div class="food-grid">
+  <div class="food-card">
+    <div class="food-emoji">🥩</div>
+    <h4>牛肉火锅</h4>
+    <div class="food-desc">吊龙、雪花、匙柄，三起三落七八秒，沙茶酱一蘸封神</div>
+    <div class="food-shop">📍 杏花吴记 / 八合里海记 / 官塘兄弟</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🦪</div>
+    <h4>潮汕生腌</h4>
+    <div class="food-desc">"潮汕毒药"——生腌虾/蟹/皮皮虾，配白粥鲜掉眉毛</div>
+    <div class="food-shop">📍 金二顺 / 肥姐白粥</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🥟</div>
+    <h4>潮汕肠粉</h4>
+    <div class="food-desc">皮薄料足酱汁浓，和广式肠粉完全不同的风味</div>
+    <div class="food-shop">📍 小吴肠粉 / 广场老牌肠粉</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🦆</div>
+    <h4>卤水鹅肉</h4>
+    <div class="food-desc">狮头鹅卤制，鹅肝粉糯、鹅肠爽脆，蘸蒜泥醋一绝</div>
+    <div class="food-shop">📍 日日香鹅肉饭店</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍡</div>
+    <h4>手打牛肉丸</h4>
+    <div class="food-desc">纯手工捶打，Q弹到可以当乒乓球打，一口爆汁</div>
+    <div class="food-shop">📍 各家牛肉火锅店均有</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍠</div>
+    <h4>反沙芋头</h4>
+    <div class="food-desc">糖霜裹炸芋头，外酥里糯，甜而不腻</div>
+    <div class="food-shop">📍 顺伯反沙屋</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍗</div>
+    <h4>腐乳鸡翅</h4>
+    <div class="food-desc">腐乳腌制现炸，外酥内嫩，去义安路找现炸的！</div>
+    <div class="food-shop">📍 潮涂记（义安路）</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍧</div>
+    <h4>甘草水果</h4>
+    <div class="food-desc">青芒蘸辣椒盐，奇异组合但停不下来，解暑神器</div>
+    <div class="food-shop">📍 牌坊街随处可见</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🦐</div>
+    <h4>蚝烙</h4>
+    <div class="food-desc">新鲜生蚝+红薯粉煎至金黄，外酥内嫩配鱼露</div>
+    <div class="food-shop">📍 老欧弟蚝烙</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍬</div>
+    <h4>鸭母捻</h4>
+    <div class="food-desc">潮汕传统甜汤，形似鸭蛋，加白果柿饼薏米</div>
+    <div class="food-shop">📍 胡荣泉</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍚</div>
+    <h4>紫菜炒饭</h4>
+    <div class="food-desc">南澳岛特产，紫菜+米饭炒出浓郁海味</div>
+    <div class="food-shop">📍 南澳岛各海鲜排档</div>
+  </div>
+  <div class="food-card">
+    <div class="food-emoji">🍵</div>
+    <h4>凤凰单丛茶</h4>
+    <div class="food-desc">鸭屎香、蜜兰香…工夫茶泡法，一壶茶一世界</div>
+    <div class="food-shop">📍 载阳茶馆 / 茶庄购买</div>
+  </div>
+</div>
+
+<!-- ════════════ BUDGET ════════════ -->
+<div class="section-header">
+  <div class="num">💰</div>
+  <h2>预算估算（4人总计）</h2>
+</div>
+
+<table class="budget-table">
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>明细</th>
+      <th>人均费用</th>
+      <th>4人合计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🚗 交通</td>
+      <td>油费（往返 730km）+ 高速费 + 南澳大桥过桥费</td>
+      <td>¥200</td>
+      <td>¥800</td>
+    </tr>
+    <tr>
+      <td>🏨 住宿</td>
+      <td>2晚（汕头+潮州各一晚），舒适型酒店/民宿</td>
+      <td>¥350</td>
+      <td>¥1,400</td>
+    </tr>
+    <tr>
+      <td>🍜 餐饮</td>
+      <td>3天6顿正餐 + 小吃零食 + 夜宵</td>
+      <td>¥400</td>
+      <td>¥1,600</td>
+    </tr>
+    <tr>
+      <td>🎫 门票</td>
+      <td>广济桥 ¥20 + 南澳景点 + 茶馆消费</td>
+      <td>¥80</td>
+      <td>¥320</td>
+    </tr>
+    <tr>
+      <td>🎁 伴手礼</td>
+      <td>潮州三宝、单丛茶、牛肉丸等</td>
+      <td>¥120</td>
+      <td>¥480</td>
+    </tr>
+    <tr>
+      <td>📦 其他</td>
+      <td>停车费、饮用水、零食、应急</td>
+      <td>¥50</td>
+      <td>¥200</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="2">🎯 <strong>总计</strong></td>
+      <td><strong>¥1,200</strong></td>
+      <td><strong>¥4,800</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ════════════ TIPS ════════════ -->
+<div class="section-header">
+  <div class="num">⚠️</div>
+  <h2>出行贴士</h2>
+</div>
+
+<div class="tips-grid">
+  <div class="tip-card">
+    <h4>🚗 自驾注意</h4>
+    <p>端午高速不免费。深汕高速鲘门-白云段为著名堵点，建议走潮惠高速替代。夜间驾驶注意休息，每2小时进服务区。</p>
+  </div>
+  <div class="tip-card">
+    <h4>🏝️ 南澳岛限流</h4>
+    <p>端午期间南澳岛可能限流，建议早上 9:00 前上岛，避开拥堵。节假日南澳大桥堵车严重，早去早回。</p>
+  </div>
+  <div class="tip-card">
+    <h4>🅿️ 停车指南</h4>
+    <p>潮州古城节假日停车位极度紧张，建议将车停在古城外围停车场，然后步行或骑共享电动车游览。</p>
+  </div>
+  <div class="tip-card">
+    <h4>🍲 错峰吃饭</h4>
+    <p>八合里、杏花吴记等网红店端午排队 2 小时起，建议错峰（下午 3-4 点去吃），或选择本地巷子小店。</p>
+  </div>
+  <div class="tip-card">
+    <h4>🌤️ 天气准备</h4>
+    <p>6月潮汕高温+台风季，带好防晒霜、太阳镜、帽子、雨具。穿舒适运动鞋，古城石板路多。</p>
+  </div>
+  <div class="tip-card">
+    <h4>💊 药品携带</h4>
+    <p>吃生腌海鲜必备肠胃药（藿香正气水、蒙脱石散），晕车药、创可贴也带上。生腌新手从虾开始尝试。</p>
+  </div>
+  <div class="tip-card">
+    <h4>📱 实用工具</h4>
+    <p>下载"车来了"查公交，汕头打车用滴滴。潮州古城步行即可。提前在点评/小红书收藏美食店铺。</p>
+  </div>
+  <div class="tip-card">
+    <h4>✨ 灯光秀攻略</h4>
+    <p>广济桥灯光秀 20:00 和 21:30 各一场，提前 30 分钟到韩江对岸（韩文公祠一侧）占位，视野最佳。</p>
+  </div>
+</div>
+
+<!-- ════════════ PACKING ════════════ -->
+<div class="section-header">
+  <div class="num">🎒</div>
+  <h2>行李清单</h2>
+</div>
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 48px;">
+  <div class="tip-card" style="border-left-color: var(--red);">
+    <h4>📄 证件类</h4>
+    <p>身份证、驾驶证、行驶证、银行卡、少量现金</p>
+  </div>
+  <div class="tip-card" style="border-left-color: var(--blue);">
+    <h4>👕 衣物类</h4>
+    <p>夏装×3套、泳衣、防晒衣、遮阳帽、墨镜、舒适运动鞋、拖鞋</p>
+  </div>
+  <div class="tip-card" style="border-left-color: var(--green);">
+    <h4>🧴 防护类</h4>
+    <p>防晒霜SPF50+、驱蚊液、雨伞/雨衣、湿巾、纸巾</p>
+  </div>
+  <div class="tip-card" style="border-left-color: #e67e22;">
+    <h4>💊 药品类</h4>
+    <p>肠胃药、晕车药、创可贴、感冒药、抗过敏药</p>
+  </div>
+  <div class="tip-card" style="border-left-color: #8e44ad;">
+    <h4>📱 电子类</h4>
+    <p>手机+充电器、充电宝、相机、自拍杆、车载手机支架、车载充电器</p>
+  </div>
+  <div class="tip-card" style="border-left-color: #2c3e50;">
+    <h4>🎯 其他</h4>
+    <p>保温杯、零食、垃圾袋、U型枕（车上补觉用）、一次性床单</p>
+  </div>
+</div>
+
+<footer>
+  <p>🏮 端午安康 · 潮汕之旅愉快 🏮</p>
+  <p style="margin-top:8px; font-size:12px;">行程策划 @ 2026 · 深圳出发 · 4人自驾 · 潮汕三市</p>
+</footer>
+
+</div>
+</body>
+</html>
